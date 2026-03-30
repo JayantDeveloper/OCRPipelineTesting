@@ -1,0 +1,15 @@
+# macOS venvs (must be rebuilt for Linux)
+paddleocr_testing/paddle-env/
+surya_marker_testing/surya-env/
+
+# Benchmark output (regenerated on run)
+paddleocr_testing/output/
+surya_marker_testing/output/
+benchmark_results.csv
+benchmark_summary.txt
+
+# macOS artifacts
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo

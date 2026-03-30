@@ -1,0 +1,5 @@
+surya-ocr
+marker-pdf
+Pillow
+opencv-python-headless
+pypdfium2

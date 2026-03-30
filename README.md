@@ -11,7 +11,7 @@ Additional experimental Paddle-only variants are also available:
 - `P4`: full `PP-StructureV3` structured parsing
 - `P6`: `PaddleOCR-VL` document understanding
 
-The project includes macOS virtual environments locally, but those must not be reused on the remote Linux machine. `setup_remote.sh` rebuilds the environments on the server.
+The project includes macOS virtual environments locally, but those must not be reused on a Linux host. `setup_remote.sh` rebuilds the environments on the target machine.
 
 ## Copy To Remote
 
@@ -26,7 +26,7 @@ rsync -av --exclude-from=.rsync-exclude ./ your_user@your-remote-host:~/OCRFULL/
 
 ## Remote Setup
 
-After SSHing into the professor's machine:
+After SSHing into your Linux host:
 
 ```bash
 cd ~/OCRFULL
@@ -77,7 +77,7 @@ python3.11 benchmark.py --run-p6
 python3.11 benchmark.py --images test_images/f1040example_filled_fake.pdf
 ```
 
-If the remote server has a broken cuDNN setup but CUDA itself still works, you can disable cuDNN just for the Surya/Marker run:
+If the target machine has a broken cuDNN setup but CUDA itself still works, you can disable cuDNN just for the Surya/Marker run:
 
 ```bash
 OCRFULL_DISABLE_CUDNN=1 CUDA_VISIBLE_DEVICES=2 python3.11 benchmark.py --skip-p1 --images test_images/f1040example_filled_fake.pdf
